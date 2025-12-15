@@ -34,5 +34,8 @@ And that's it!
    - More than 4 regions: Extreme
 
 # Tested Systems
+Systems do not need to do anything to use this module. It should be fairly simple to use it.
+However, if the system does any change on the Canvas' Ruler or the Token's Ruler, it will not activate the module.
+If you test a new system, open a PR with the new system on this list.
 - [Coriolis: The Great Dark](https://foundryvtt.com/packages/coriolis-tgd), from Free League
 - [Invincible](https://foundryvtt.com/packages/invincible), from Free League
