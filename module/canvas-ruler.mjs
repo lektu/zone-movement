@@ -1,0 +1,21 @@
+import { calculateZoneCost, getPath, prepareZoneLabel } from "./zone-ruler.mjs";
+
+export default class ZoneCanvasRuler extends foundry.canvas.interaction.Ruler {
+
+  _getWaypointLabelContext(waypoint, state) {
+    const context = super._getWaypointLabelContext(waypoint, state);
+    if (!context) return;
+
+    const scene = game.scenes.current;
+    if (scene.grid.units != "zone")
+      return context;
+
+    const paths = getPath(waypoint);
+    const cost = calculateZoneCost(paths, scene);
+    const costLabel = prepareZoneLabel(cost, scene, paths);
+
+    context.cost = costLabel;
+    context.distance = costLabel;
+    return context;
+  }
+}

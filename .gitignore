@@ -1,0 +1,8 @@
+node_modules/**/*
+packs/**/*
+css/*
+**/.DS_Store
+*.zip
+.foundry-token
+foundry/
+.linkedToFoundry
