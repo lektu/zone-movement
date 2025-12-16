@@ -2,12 +2,32 @@
   "ZONE-MOVEMENT": {
     "DistanceLabel": {
       "Name": "Show Distance Labels",
-      "Hint": "Toggle to display distance labels on movement paths.",
-      "Engaged": "Engaged",
-      "Short": "Short",
-      "Medium": "Medium",
-      "Long": "Long",
-      "Extreme": "Extreme"
+      "Hint": "Toggle to display distance labels on movement paths, based on Coriolis: The Great Dark rules.",
+      "Engaged": {
+        "Name": "Engaged Label",
+        "Hint": "Label for Engaged distance (adjacent square/less than the grid size). Leave null to use default ('Engaged'), or set your own custom label. Accepts a translation key.",
+        "Default": "Engaged"
+      },
+      "Short": {
+        "Name": "Short Label",
+        "Hint": "Label for Short distance (same region). Leave null to use default ('Short'), or set your own custom label. Accepts a translation key.",
+        "Default": "Short"
+      },
+      "Medium": {
+        "Name": "Medium Label",
+        "Hint": "Label for Medium distance (adjacent region). Leave null to use default ('Medium'), or set your own custom label. Accepts a translation key.",
+        "Default": "Medium"
+      },
+      "Long": {
+        "Name": "Long Label",
+        "Hint": "Label for Long distance (between two and four regions). Leave null to use default ('Long'), or set your own custom label. Accepts a translation key.",
+        "Default": "Long"
+      },
+      "Extreme": {
+        "Name": "Extreme Label",
+        "Hint": "Label for Extreme distance (more than four regions). Leave null to use default ('Extreme'), or set your own custom label. Accepts a translation key.",
+        "Default": "Extreme"
+      }
     }
   }
 }

@@ -100,16 +100,18 @@ export function prepareZoneLabel(cost, scene, paths) {
     return { total: cost, units: unit };
 
   const isEngaged = (cost == 0 && paths.length == 2 && (Math.abs(paths[0].x - paths[1].x) <= scene.grid.sizeX) && (Math.abs(paths[0].y - paths[1].y) <= scene.grid.sizeY));
-  let delta = game.i18n.localize("ZONE-MOVEMENT.DistanceLabel.Short");
+  let delta = game.settings.get("zone-movement", "ShortText") ?? "ZONE-MOVEMENT.DistanceLabel.Short.Default";
 
   if (isEngaged)
-    delta = game.i18n.localize("ZONE-MOVEMENT.DistanceLabel.Engaged");
+    delta = game.settings.get("zone-movement", "EngagedText") ?? "ZONE-MOVEMENT.DistanceLabel.Engaged.Default";
   else if (cost > 4)
-    delta = game.i18n.localize("ZONE-MOVEMENT.DistanceLabel.Extreme");
+    delta = game.settings.get("zone-movement", "ExtremeText") ?? "ZONE-MOVEMENT.DistanceLabel.Extreme.Default";
   else if (cost > 1)
-    delta = game.i18n.localize("ZONE-MOVEMENT.DistanceLabel.Long");
+    delta = game.settings.get("zone-movement", "LongText") ?? "ZONE-MOVEMENT.DistanceLabel.Long.Default";
   else if (cost == 1)
-    delta = game.i18n.localize("ZONE-MOVEMENT.DistanceLabel.Medium");
+    delta = game.settings.get("zone-movement", "MediumText") ?? "ZONE-MOVEMENT.DistanceLabel.Medium.Default";
+
+  delta = game.i18n.localize(delta);
 
   return { total: cost, units: unit, delta };
 }

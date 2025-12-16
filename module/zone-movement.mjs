@@ -1,4 +1,5 @@
 import ZoneCanvasRuler from "./canvas-ruler.mjs";
+import { registerSettings } from "./settings.mjs";
 import ZoneTokenRuler from "./token-ruler.mjs";
 
 let showError = false;
@@ -11,14 +12,7 @@ Hooks.once('init', function () {
   CONFIG.Token.rulerClass = ZoneTokenRuler;
   CONFIG.Canvas.rulerClass = ZoneCanvasRuler;
 
-  game.settings.register("zone-movement", "showLabels", {
-    config: true,
-    name: "ZONE-MOVEMENT.DistanceLabel.Name",
-    hint: "ZONE-MOVEMENT.DistanceLabel.Hint",
-    scope: 'world',
-    type: Boolean,
-    default: true,
-  });
+  registerSettings();
 });
 
 Hooks.once('ready', function () {
