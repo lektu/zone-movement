@@ -62,6 +62,7 @@ export function calculateZoneCost(paths, scene) {
   let previousZone = null;
   let currentZone = null;
   let first = true;
+  const countNoRegionAsZone = game.settings.get("zone-movement", "countNoRegionAsZone");
   for (const path of paths) {
     currentZone = null;
     for (const region of scene.regions) {
@@ -80,6 +81,9 @@ export function calculateZoneCost(paths, scene) {
       break;
     }
     first = false;
+
+    if (currentZone == null && !countNoRegionAsZone)
+      continue;
 
     if (currentZone == previousZone)
       continue;

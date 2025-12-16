@@ -28,6 +28,10 @@
         "Hint": "Label for Extreme distance (more than four regions). Leave null to use default ('Extreme'), or set your own custom label. Accepts a translation key.",
         "Default": "Extreme"
       }
+    },
+    "CountNoRegionAsZone": {
+      "Name": "Count No Region as Zone",
+      "Hint": "If enabled, areas without a defined region will be treated as their own zone for movement calculations. If you are using gridless maps, or if you have gaps between regions, you may want to enable this setting."
     }
   }
 }
