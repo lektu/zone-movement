@@ -20,6 +20,15 @@ function allSettings() {
     }
   });
 
+  settingsToRegister.countNoRegionAsZone = {
+    config: true,
+    name: "ZONE-MOVEMENT.CountNoRegionAsZone.Name",
+    hint: "ZONE-MOVEMENT.CountNoRegionAsZone.Hint",
+    scope: 'world',
+    type: Boolean,
+    default: true,
+  };
+
   return settingsToRegister;
 }
 
